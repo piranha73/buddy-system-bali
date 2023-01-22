@@ -11,7 +11,8 @@
 .header {
  display: flex;
  justify-content: left;
- height: 2em;
+ align-items: center;
+ height: 3em;
  margin: 2em 0;
 }
 
@@ -40,4 +41,14 @@
 
 .student p {
   margin: .5em 0;
+}
+
+@media screen and (max-width: 768px) {
+  #online-buddies-grid {grid-template-columns: 1fr 1fr;}
+  #onsite-buddies-grid {grid-template-columns: 1fr 1fr;}
+}
+
+@media screen and (max-width: 576px) {
+  #online-buddies-grid {grid-template-columns: 1fr;}
+  #onsite-buddies-grid {grid-template-columns: 1fr;}
 }
