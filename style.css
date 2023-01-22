@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.header {
+ display: flex;
+ justify-content: left;
+ height: 2em;
+ margin: 2em 0;
+}
+
+.header img {
+  margin-left: 1em;
+}
+
+#online-buddies-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+}
+
+#onsite-buddies-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+}
+
+.couple {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1em 1em;
+}
+
+.student p {
+  margin: .5em 0;
+}
