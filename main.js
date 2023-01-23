@@ -29,13 +29,13 @@ const displayName = user => `<p>${user.name}</p>`
 const displayBuddy = user => `<div class=student>${displayImage(user)}${displayName(user)}</div>`
 
 const displayBuddies = (buddies, place) => {
-  const onlineList = document.getElementById(`${place}-buddies-grid`)
+  const list = document.getElementById(`${place}-buddies-grid`)
   buddies.forEach(couple => {
-    onlineList.insertAdjacentHTML('beforeend',
+    list.insertAdjacentHTML('beforeend',
       `<div class=couple>
         ${displayBuddy(couple[0])}
         <i class="fa-solid fa-arrows-left-right"></i>
-        ${displayBuddy(couple[1])}
+        ${displayBuddy(couple[1] || {name: '', github: 'lewagon'})}
       </div>`
     )
   });
