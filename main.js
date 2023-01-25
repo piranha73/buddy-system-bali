@@ -41,6 +41,15 @@ const displayBuddies = (buddies, place) => {
   });
 }
 
-let currentDay = new Date()
+const displayDate = (date) => {
+  const dateHeader = document.getElementById("date-header");
+  dateHeader.innerText = date;
+};
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+let currentDay = urlParams.has('date') ? new Date(urlParams.get('date')) : new Date();
+
+displayDate(currentDay.toDateString())
 displayBuddies(onsiteMatches[countIndex(currentDay) % onsiteMatches.length], 'onsite')
 displayBuddies(onlineMatches[countIndex(currentDay) % onlineMatches.length], 'online')
