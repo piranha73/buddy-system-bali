@@ -1,8 +1,6 @@
 const onlineMatches = await(await fetch('./online_matches.json')).json()
 const onsiteMatches = await(await fetch('./onsite_matches.json')).json()
 
-// console.log(await fetch('www.google.com'))
-
 console.log('online', onlineMatches);
 console.log('onsite', onsiteMatches);
 
