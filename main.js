@@ -31,9 +31,9 @@ const displayBuddies = (buddies, place) => {
   buddies.forEach(couple => {
     list.insertAdjacentHTML('beforeend',
       `<div class=couple>
-        ${displayBuddy(couple[0])}
+        ${displayBuddy(couple[0] || {name: '42', github: '42'})}
         <i class="fa-solid fa-arrows-left-right"></i>
-        ${displayBuddy(couple[1] || {name: '', github: 'lewagon'})}
+        ${displayBuddy(couple[1] || {name: '42', github: '42'})}
       </div>`
     )
   });
