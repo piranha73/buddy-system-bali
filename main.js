@@ -5,12 +5,14 @@ console.log('online', onlineMatches);
 console.log('onsite', onsiteMatches);
 
 const countIndex = date => {
-  const firstDay = new Date(2023, 0, 23)
+  const firstDay = new Date(2023, 1, 7)
   const msInDay = 86400000
   let dayGap = Math.trunc((date - firstDay) / msInDay)
+  console.log(dayGap);
   let extra = 0
-  if ((dayGap + 1) % 7 === 6) extra = 1
-  return dayGap - Math.trunc(dayGap / 6) * 2 + extra
+  if (dayGap % 7 === 4) extra = 1
+  else if (dayGap % 7 === 5) extra = 2
+  return dayGap - Math.trunc(dayGap / 7) * 2 - extra
 }
 
 const displayImage = user => `
