@@ -6,12 +6,14 @@ console.log('onsite', onsiteMatches);
 
 const countIndex = date => {
   const firstDay = new Date(2023, 1, 7)
+  console.log("firstDay", firstDay);
   const msInDay = 86400000
   let dayGap = Math.trunc((date - firstDay) / msInDay)
-  console.log(dayGap);
+  console.log("dayGap", dayGap);
   let extra = 0
   if (dayGap % 7 === 4) extra = 1
   else if (dayGap % 7 === 5) extra = 2
+  else if (dayGap % 7 === 6) extra = 2
   return dayGap - Math.trunc(dayGap / 7) * 2 - extra
 }
 
@@ -51,5 +53,6 @@ const urlParams = new URLSearchParams(queryString);
 let currentDay = urlParams.has('date') ? new Date(urlParams.get('date')) : new Date();
 
 displayDate(currentDay.toDateString())
+console.log("weekday", countIndex(currentDay));
 displayBuddies(onsiteMatches[countIndex(currentDay) % onsiteMatches.length], 'onsite')
 displayBuddies(onlineMatches[countIndex(currentDay) % onlineMatches.length], 'online')
